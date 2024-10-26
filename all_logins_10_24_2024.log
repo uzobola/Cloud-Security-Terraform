@@ -1,0 +1,52 @@
+INFO:werkzeug:WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.1.143:5000
+INFO:werkzeug:Press CTRL+C to quit
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 109-208-768
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 10:52:12] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 10:52:13] "GET /auth/login?next=/ HTTP/1.1" 200 -
+INFO:root:Login attempt - Username: Shafee, Password: correct_password123
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 10:52:14] "POST /auth/login HTTP/1.1" 302 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 10:52:15] "GET /index HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 10:52:19] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 10:52:23] "POST /search HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 10:52:30] "GET /notifications?since=0 HTTP/1.1" 200 -
+INFO:root:Login attempt - Username: Clint, Password: mysecurepassword
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 10:52:34] "POST /auth/login HTTP/1.1" 302 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 10:52:35] "GET /index HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 10:52:39] "GET /messages HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 10:52:49] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:10] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:12] "GET /auth/login?next=/ HTTP/1.1" 200 -
+INFO:root:Login attempt - Username: ' OR '1'='1, Password: lkdfsa
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:13] "POST /auth/login HTTP/1.1" 302 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:14] "GET /index HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:19] "GET /auth/profile HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:23] "POST /search HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:26] "GET /notifications?since=0 HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:28] "GET /messages HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:30] "GET /profile HTTP/1.1" 200 -
+INFO:root:Login attempt - Username: ' UNION SELECT null, username, password FROM users --, Password: fakepassword
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:33] "POST /auth/login HTTP/1.1" 302 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:34] "GET /index HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:35] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:36] "GET /notifications HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:40] "GET /messages HTTP/1.1" 200 -
+INFO:root:Login attempt - Username: admin'; DROP TABLE users; --, Password: nopass
+ERROR:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:41] "POST /auth/login HTTP/1.1" 500 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:44] "GET /auth/login HTTP/1.1" 200 -
+INFO:root:Login attempt - Username: Uzo, Password: uzostrongpassword
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:45] "POST /auth/login HTTP/1.1" 302 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:46] "GET /index HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:49] "GET /profile HTTP/1.1" 200 -
+INFO:root:Login attempt - Username: ' OR 'a'='a, Password: testpass
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:53] "POST /auth/login HTTP/1.1" 302 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:54] "GET /index HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:02:55] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:03:01] "GET /notifications?since=0 HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:03:05] "GET /messages HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:03:09] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:108.41.51.195 - - [26/Oct/2024 11:03:13] "GET /logout HTTP/1.1" 302 -
