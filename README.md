@@ -12,7 +12,7 @@
 
 ### Project Objectives
 - **Security Assessment:** Identify and analyze potential vulnerabilities within Microblog's cloud infrastructure.
-- **Mitigation and Hardening:** Implement measures to address at least three vulnerabilities, demonstrating an understanding of best practices in cloud security.
+- **Mitigation and Hardening:** Implement measures to address at least **three** vulnerabilities, demonstrating an understanding of best practices in cloud security.
 - **Documentation and Recommendations:** Document your findings and outline additional vulnerabilities you identified, along with recommendations on how to address them.
 
 ### Instructions
@@ -21,9 +21,9 @@
 
 - **Identify Vulnerabilities:** Review the current cloud setup and identify areas where security could be improved. Consider aspects such as network security, access controls, and data handling.
 
-- **Implement Fixes:** Select at least three vulnerabilities and implement fixes to mitigate them. Your choices should demonstrate an understanding of security best practices, with a focus on strengthening the infrastructure.
+- **Implement Fixes:** Select at least **three** vulnerabilities and implement fixes to mitigate them. Your choices should demonstrate an understanding of security best practices, with a focus on strengthening the infrastructure.
 
-- **Document Additional Findings:** Beyond the three you addressed, document additional vulnerabilities or areas of concern you encountered. Provide recommendations on how to mitigate these remaining risks, including any future security measures you would suggest.
+- **Document Additional Findings:** Beyond the **three** you addressed, document additional vulnerabilities or areas of concern you encountered. Provide recommendations on how to mitigate these remaining risks, including any future security measures you would suggest.
 
 #### Create Diagrams:
 - **Current State Diagram:** Use any diagramming tool (e.g., Draw.io) to map out the existing infrastructure, highlighting areas with known vulnerabilities.
@@ -35,7 +35,7 @@ Compile your findings, diagrams, and recommendations in a report, following the 
 ### Documentation Deliverables
 
 - **Security Review Report:** A detailed report that includes:
-  - **Vulnerabilities Addressed:** Describe the three vulnerabilities you chose to fix, including details of the mitigation steps and best practices applied.
+  - **Vulnerabilities Addressed:** Describe the **three** vulnerabilities you chose to fix, including details of the mitigation steps and best practices applied.
   - **Additional Vulnerabilities:** List any additional vulnerabilities discovered, with brief descriptions and recommendations for mitigation.
   - **Diagrams:** Include the Current State Diagram and Secure Deployment Diagram in your report.
   - **Implementation Documentation:** Detail the steps taken to address each vulnerability you mitigated, along with any code changes or AWS configurations made.
