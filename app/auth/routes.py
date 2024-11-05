@@ -23,17 +23,15 @@ def login():
     
     if form.validate_on_submit():
         username = form.username.data
-        password = form.password.data  
         
-        logging.info(f"Login attempt - Username: {username}, Password: {password}")
+        # CloudSec-TF update: removed password logging
+        logging.info(f"Login attempt - Username: {username}")
         
-        query = text(f"SELECT * FROM user WHERE username = '{username}'")
-        result = db.session.execute(query).fetchone()
-        
-        user = User.query.get(result.id) if result else None
-        
-        if user is None:
-            flash(_('Invalid username'))
+        user = User.query.filter_by(username=username).first()
+
+        # CloudSec-TF update: prevent username enumeration
+        if user is None or not user.check_password(form.password.data):
+            flash(_('Invalid username or password'))
             return redirect(url_for('auth.login'))
         
         login_user(user, remember=form.remember_me.data)
