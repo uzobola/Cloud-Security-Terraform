@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # Cloud-Security-Terraform
-=======
+
 # Kura Labs Cohort 5- CyberSsecurity Workload 1
 
 ---
@@ -40,4 +40,4 @@ Compile your findings, diagrams, and recommendations in a report, following the 
   - **Diagrams:** Include the Current State Diagram and Secure Deployment Diagram in your report.
   - **Implementation Documentation:** Detail the steps taken to address each vulnerability you mitigated, along with any code changes or AWS configurations made.
   - **Executive Summary:** A concise overview of your security review, highlighting the main findings and recommendations for Microblog's executive team.
->>>>>>> 2f6a501 (Create README.md)
+
