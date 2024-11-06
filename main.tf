@@ -18,30 +18,30 @@ resource "aws_vpc" "microblog_vpc" {
   }
 }
 
-# Public Subnet Configuration
+# Public Subnet Configuration for each availability zone
 # Security Note: Only resources that MUST be internet-facing should be placed here
 # Examples: Load balancers, bastion hosts, NAT gateways
-resource "aws_subnet" "public_subnet" {
+resource "aws_subnet" "public_subnet_1" {
   vpc_id                  = aws_vpc.microblog_vpc.id
   cidr_block              = "10.0.1.0/24"
   map_public_ip_on_launch = true  # Security consideration: Only enable for resources requiring direct internet access
   availability_zone       = "us-east-1a"
 
   tags = {
-    Name = "microblog-public-subnet"
+    Name = "microblog-public-subnet-1"
   }
 }
 
-# Private Subnet Configuration
+# Private Subnet Configuration for each availability zone
 # Security Best Practice: Place application servers and databases in private subnets
 # This provides an additional layer of network security
-resource "aws_subnet" "private_subnet" {
+resource "aws_subnet" "private_subnet_1" {
   vpc_id            = aws_vpc.microblog_vpc.id
   cidr_block        = "10.0.2.0/24"
   availability_zone = "us-east-1a"
 
   tags = {
-    Name = "microblog-private-subnet"
+    Name = "microblog-private-subnet-1"
   }
 }
 
@@ -55,6 +55,25 @@ resource "aws_internet_gateway" "igw" {
     Name = "microblog-igw"
   }
 }
+
+# Elastic IP for NAT Gateway
+resource "aws_eip" "nat_eip" {
+  domain = "vpc"
+  tags = {
+    Name = "microblog-nat-eip"
+  }
+}
+
+# NAT Gateway for private subnets
+resource "aws_nat_gateway" "nat" {
+  allocation_id = aws_eip.nat_eip.id
+  subnet_id     = aws_subnet.public_subnet_1.id
+
+  tags = {
+    Name = "microblog-nat"
+  }
+}
+
 
 # Route Table Configuration
 # Security Best Practice: Separate route tables for public and private subnets
@@ -75,12 +94,36 @@ resource "aws_route" "public_internet_gateway" {
   gateway_id             = aws_internet_gateway.igw.id
 }
 
-# Route Table Association
+# Public Route Table Association. Should be made for both AZ's
 # Links the public subnet to the route table with internet access
-resource "aws_route_table_association" "public_rt_assoc" {
+resource "aws_route_table_association" "public_rt_assoc_1" {
   subnet_id      = aws_subnet.public_subnet.id
   route_table_id = aws_route_table.public_rt.id
 }
+
+
+# Private Route Configuration
+# Security Note: Should live in the public subnets 
+resource "aws_route_table" "private_rt" {
+  vpc_id = aws_vpc.microblog_vpc.id
+
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.nat.id
+  }
+
+  tags = {
+    Name = "microblog-private-rt"
+  }
+}
+
+# Private Route Table Association. Should be made for both AZ's
+# Links the private subnets
+resource "aws_route_table_association" "private_1" {
+  subnet_id      = aws_subnet.private_subnet_1.id
+  route_table_id = aws_route_table.private_rt.id
+}
+
 
 # Security Group Configuration
 # Security Best Practice: Implement the principle of least privilege
