@@ -140,7 +140,8 @@ Current security monitoring has detected numerous suspicious events:
   EOF
   ```
 
-- ** Updated script to not log passwords
+- **Updated script to not log passwords:
+  ![No password logging](./nopwlog.png)
    
 
 #### 2. Overly Permissive Security Groups
