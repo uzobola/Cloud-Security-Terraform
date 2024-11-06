@@ -97,6 +97,24 @@ Current security monitoring has detected numerous suspicious events:
   WARNING:werkzeug: * Debugger is active!
   INFO:werkzeug: * Debugger PIN: 109-208-768
   ```
+- **Evidence 2**:
+  ```
+  INFO:werkzeug: * Running on all addresses (0.0.0.0)
+   * Running on http://127.0.0.1:5000
+   * Running on http://172.31.4.239:5000
+   INFO:werkzeug: Press CTRL+C to quit
+   INFO:werkzeug: * Restarting with stat
+   WARNING:werkzeug: * Debugger is active!
+   INFO:werkzeug: * Debugger PIN: 112-130-713
+   INFO:werkzeug:75.47.217.196 - - [04/Nov/2024 01:38:51] "GET /auth/login?next=/ HTTP/1.1" 302 -
+   INFO:werkzeug:75.47.217.196 - - [04/Nov/2024 01:38:51] "GET /auth/login?next=/ HTTP/1.1" 200 -
+   INFO:werkzeug:75.47.217.196 - - [04/Nov/2024 01:38:52] "GET /favicon.ico HTTP/1.1" 404 -
+   INFO:root:Login attempt - Username: Uzo, Password: uzostrongpassword
+   INFO:werkzeug:75.47.217.196 - - [04/Nov/2024 01:39:44] "POST /auth/login?next=/ HTTP/1.1" 302 -
+   INFO:werkzeug:75.47.217.196 - - [04/Nov/2024 01:39:44] "GET /auth/login HTTP/1.1" 200 -
+   INFO:werkzeug:75.47.217.196 - - [04/Nov/2024 01:40:57] "POST /auth/login HTTP/1.1" 302 -
+   INFO:werkzeug:75.47.217.196 - - [04/Nov/2024 01:40:57] "GET /auth/login HTTP/1.1" 200 -
+
 - **Key Issues**:
   - Not designed for production loads
   - Lacks security hardening
@@ -121,6 +139,9 @@ Current security monitoring has detected numerous suspicious events:
   WantedBy=multi-user.target
   EOF
   ```
+
+- ** Updated script to not log passwords
+   
 
 #### 2. Overly Permissive Security Groups
 - **Severity**: Critical
