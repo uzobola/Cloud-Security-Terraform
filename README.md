@@ -7,7 +7,7 @@
 As requested, our team assessed Microblog's infrastructure following reports of suspicious system behavior and unusual user activity. Our comprehensive security audit revealed several critical vulnerabilities that require immediate attention to prevent potential data breaches and ensure the platform's security as the company continues its rapid growth.
 
 ### Security Assessment Overview
-Our review identified multiple security concerns requiring immediate attention. The assessment focused on:
+Our review identified multiple security concerns that require immediate attention. The assessment focused on:
 - Network security architecture and configurations
 - Access control mechanisms and policies
 - Data handling practices and encryption
@@ -36,7 +36,7 @@ Our analysis of the current infrastructure revealed several security gaps and ar
    - Developed hardened security group configurations
    - Implemented HTTPS with proper SSL/TLS
    - Configured WAF rules and protection
-   - Established secure CI/CD pipeline
+   - Established a secure CI/CD pipeline
 
 4. **Testing and Validation**
    - Validated security group changes
@@ -63,7 +63,7 @@ Critical vulnerabilities were identified in three main areas:
    - Unrestricted access to critical ports
    - Lack of network segmentation
 2. **Application Security Vulnerabilities**
-   - Production environment running on insecure development server
+   - Production environment running on an insecure development server
    - Missing HTTPS implementation
    - Inadequate session management
 3. **User Data Security**
@@ -141,6 +141,7 @@ Current security monitoring has detected numerous suspicious events:
   ```
 
 - **Updated script to not log passwords:
+  
   ![No password logging](./nopwlog.png)
    
 
